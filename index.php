@@ -15,53 +15,71 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-[#217e6b]">
-    <nav class="flex justify-between bg-[#002633] w-full sticky top-0">
-        <!-- logo -->
-        <section class="w-max box-border">
-            <a href="index.php">
-                <img src="assets/image/logo.png" alt="Logo" class="w-[100px]">
-            </a>
-        </section>
+<body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/background.jpg');">
+    <nav class=" bg-[#006a43] w-full sticky top-0">
+        <section class="flex justify-between w-[70%] m-auto">
+            <!-- logo -->
+            <section class="w-max box-border">
+                <a href="index.php">
+                    <img src="assets/image/logo.png" alt="Logo" class="w-[120px]">
+                </a>
+            </section>
 
-        <!-- navbar list -->
-        <section class=" w-3/6 box-border">
-            <ul class="flex justify-around items-center text-[#3dc6aa] text-lg h-full font-[Poppins]">
-                <li class="px-2 hover:bg-slate-600 hover:delay-75 hover:border border-gray-400 rounded-lg">
-                    <a href="index.php">Beranda</a>
-                </li>
-                <li class="px-2 hover:bg-slate-600 hover:delay-75 hover:border border-b-gray-400 rounded-lg">
-                    <a href="index.php">Ajukan
-                        Pengaduan</a>
-                </li>
-                <li class="px-2 hover:bg-slate-600 hover:delay-75 hover:border border-b-gray-400 rounded-lg">
-                    <a href="index.php">Daftar
-                        Pengaduan</a>
-                </li>
-                <li class="px-2 hover:bg-slate-600 hover:delay-75 hover:border border-b-gray-400 rounded-lg">
-                    <a href="index.php">Masuk / Daftar</a>
-                </li>
-            </ul>
+            <!-- navbar list -->
+            <section class=" w-[23%] box-border">
+                <ul class="flex justify-around items-center text-white font-semibold tracking-wider
+                    text-base h-full font-[Poppins]">
+                    <li class="px-4">
+                        <a href="index.php">MASUK</a>
+                    </li>
+                    <li class="py-3 px-6 border border-white rounded-lg 
+                    hover:bg-white hover:text-[#006a43] hover:delay-75 hover:font-bold">
+                        <a href="index.php">DAFTAR</a>
+                    </li>
+                </ul>
+            </section>
         </section>
     </nav>
-
-    <article class="w-[100%] m-auto h-full">
-        <!-- gambar sampah -->
-        <section class="flex w-full h-full border shadow-picture">
-            <img src="assets/image/sampah1.png" alt="Sampah di pantai" class="w-[40%] h-[300px]">
-            <img src="assets/image/sampah2.png" alt="Sampah di jalan" class="w-[40%] h-[300px]">
-            <img src="assets/image/sampah3.png" alt="Sampah di jalan" class="w-[40%] h-[300px]">
-        </section>
-
-        <h1 class="text-5xl font-bold text-white text-center mt-10">Bumi sekarang semakin tercemar</h1>
+    <article class="w-[100%] m-auto h-full mb-16">
         <!-- Tulisan tulisan -->
         <section>
-
-            <h2>Mari bersama-sama selamatkan bumi</h2>
-            <h2>Sampah di sekitar anda yang sudah menumpuk</h2>
-            <p>"Ajukan pengaduan sekarang ke pihak berwenang agar di ekskusi secepatnya"</p>
+            <h1 class="text-4xl font-bold text-white text-center mt-16">
+                Layanan Pengaduan Online Masyarakat
+            </h1>
+            <h2 class="text-2xl font-thin text-white text-center mt-5">
+                Ajukan pengaduan agar sampah di sekitar anda cepat di eksekusi
+            </h2>
+            <div class="w-48 m-auto border-2 border-white mt-12 mb-16"></div>
         </section>
-        <button>Ajukan Pengaduan</button>
+
+        <!-- Form pengaduan -->
+        <section class="bg-white m-auto w-3/6 p-[30px] shadow-form">
+            <h1 class="w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">Ajukan Pengaduan Anda</h1>
+            <form action="#" method="post">
+                <!-- deskripsi pengajuan -->
+                <textarea class="w-full border border-gray-400 mb-4 p-2" name="deskripsi" cols="30" rows="10"
+                    placeholder="Ketik Laporan Anda *" required></textarea>
+                <!-- input tanggal -->
+                <input class="w-full border border-gray-400 mb-4 p-2" type="date" name="tanggal"
+                    placeholder="Pilih Tanggal Kejadian *" required>
+                <!-- input lokasi map -->
+                <input class="w-full border border-gray-400 mb-4 p-2" type="text" name="map"
+                    placeholder="Masukkan Lokasi Map *" required>
+                <!-- input detail lokasi -->
+                <input class="w-full border border-gray-400 mb-4 p-2" type="text" name="lokasi"
+                    placeholder="Deskripsikan Detail Lokasi *" required>
+                <!-- input gambar -->
+                <section>
+
+                </section>
+                <input class="w-full border border-gray-400 mb-4 p-2" type="file" name="gambar" accept="image/*"
+                    required>
+                <div class="border border-t-gray-400 w-full mb-4"></div>
+                <section class="w-full flex justify-end">
+                    <button class="p-2 px-4 bg-[#006a43] text-white font-semibold" type="submit">AJUKAN!</button>
+                </section>
+            </form>
+        </section>
     </article>
 
     <footer></footer>
