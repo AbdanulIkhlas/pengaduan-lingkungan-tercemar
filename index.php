@@ -6,13 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lindungi Bumi</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google fonts -->
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
         rel="stylesheet">
+
+    <!-- ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/background.jpg');">
@@ -57,26 +65,27 @@
             <h1 class="w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">Ajukan Pengaduan Anda</h1>
             <form action="#" method="post">
                 <!-- deskripsi pengajuan -->
-                <textarea class="w-full border border-gray-400 mb-4 p-2" name="deskripsi" cols="30" rows="10"
-                    placeholder="Ketik Laporan Anda *" required></textarea>
+                <textarea class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" name="deskripsi" cols="30"
+                    rows="10" placeholder="Ketik Laporan Anda *" required></textarea>
                 <!-- input tanggal -->
-                <input class="w-full border border-gray-400 mb-4 p-2" type="date" name="tanggal"
-                    placeholder="Pilih Tanggal Kejadian *" required>
+                <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="date" name="tanggal"
+                    id="tanggalInput" required>
                 <!-- input lokasi map -->
-                <input class="w-full border border-gray-400 mb-4 p-2" type="text" name="map"
+                <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="text" name="map"
                     placeholder="Masukkan Lokasi Map *" required>
                 <!-- input detail lokasi -->
-                <input class="w-full border border-gray-400 mb-4 p-2" type="text" name="lokasi"
+                <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="text" name="lokasi"
                     placeholder="Deskripsikan Detail Lokasi *" required>
                 <!-- input gambar -->
-                <section>
-
+                <section class="flex gap-2 items-center w-full border border-gray-400 mb-4 px-[12px]">
+                    <div class="border-r border-black h-[100%] text-gray-400 py-[10px] pr-2">Masukkan Gambar * </div>
+                    <input class="w-[32rem]" type="file" name="gambar" accept="image/*" required>
                 </section>
-                <input class="w-full border border-gray-400 mb-4 p-2" type="file" name="gambar" accept="image/*"
-                    required>
                 <div class="border border-t-gray-400 w-full mb-4"></div>
                 <section class="w-full flex justify-end">
-                    <button class="p-2 px-4 bg-[#006a43] text-white font-semibold" type="submit">AJUKAN!</button>
+                    <button class="p-2 px-4 bg-[#006a43] text-white font-semibold rounded-md 
+                    hover:bg-[#104632] hover:ease-in-out duration-300  hover:shadow-md hover:shadow-[#12382a]"
+                        type="submit">AJUKAN!</button>
                 </section>
             </form>
         </section>
