@@ -18,9 +18,6 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/background.jpg');">
@@ -62,7 +59,8 @@
 
         <!-- Form pengaduan -->
         <section class="bg-white m-auto w-3/6 p-[30px] shadow-form">
-            <h1 class="w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">Ajukan Pengaduan Anda</h1>
+            <h1 class="text-center w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">Ajukan Pengaduan Anda
+            </h1>
             <form action="#" method="post">
                 <!-- deskripsi pengajuan -->
                 <textarea class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" name="deskripsi" cols="30"
@@ -78,7 +76,7 @@
                     placeholder="Deskripsikan Detail Lokasi *" required>
                 <!-- input gambar -->
                 <section class="flex gap-2 items-center w-full border border-gray-400 mb-4 px-[12px]">
-                    <div class="border-r border-black h-[100%] text-gray-400 py-[10px] pr-2">Masukkan Gambar * </div>
+                    <div class="border-r border-gray-400 h-[100%] text-gray-400 py-[10px] pr-2">Masukkan Gambar * </div>
                     <input class="w-[32rem]" type="file" name="gambar" accept="image/*" required>
                 </section>
                 <div class="border border-t-gray-400 w-full mb-4"></div>
