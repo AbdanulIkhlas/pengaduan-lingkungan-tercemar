@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google fonts -->
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="src/assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
