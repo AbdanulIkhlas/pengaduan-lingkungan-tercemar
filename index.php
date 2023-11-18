@@ -44,7 +44,7 @@ $statusLogin = false;
                     if($username == "admin"){
                     ?>
                     <li class="px-4">
-                        <a href="daftarPengaduan.php">DAFTAR PENGADUAN</a>
+                        <a href="daftarEnkripsi.php">DAFTAR PENGADUAN</a>
                     </li>
                     <?php
                     }
