@@ -35,11 +35,11 @@
                 <ul class="flex justify-around items-center text-white font-semibold tracking-wider
                     text-base h-full font-[Poppins]">
                     <li class="px-4">
-                        <a href="index.php">MASUK</a>
+                        <a href="masuk.php">MASUK</a>
                     </li>
-                    <li class="py-3 px-6 border border-white rounded-lg 
-                    hover:bg-white hover:text-[#006a43] hover:delay-75 hover:font-bold">
-                        <a href="index.php">DAFTAR</a>
+                    <li class="py-2 px-6 border border-white rounded-lg 
+                    hover:bg-white hover:text-[#006a43] hover:ease-in-out hover:duration-500 hover:font-bold">
+                        <a href="daftar.php">DAFTAR</a>
                     </li>
                 </ul>
             </section>
@@ -66,8 +66,13 @@
                 <textarea class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" name="deskripsi" cols="30"
                     rows="10" placeholder="Ketik Laporan Anda *" required></textarea>
                 <!-- input tanggal -->
-                <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="date" name="tanggal"
-                    id="tanggalInput" required>
+                <section class="flex gap-2 items-center w-full border border-gray-400 mb-4 px-[12px] box-border">
+                    <div class="border-r border-gray-400 h-[100%] text-gray-400 py-[10px] pr-2 ">
+                        Masukkan Tanggal *
+                    </div>
+                    <input class="w-[32rem] py-2 focus:outline-none" type="date" name="tanggal" id="tanggalInput"
+                        required>
+                </section>
                 <!-- input lokasi map -->
                 <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="text" name="map"
                     placeholder="Masukkan Lokasi Map *" required>
