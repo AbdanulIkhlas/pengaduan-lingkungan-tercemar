@@ -1,6 +1,6 @@
 <?php 
 $username = "admin";
-$statusLogin = true;
+$statusLogin = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +52,7 @@ $statusLogin = true;
                     <!-- ------------------------- -->
                     <?php if($statusLogin){?>
                     <li class="px-4 border-r-2 border-white">
-                        <a href="masuk.php">Halo, <?php echo $username ?></a>
+                        <h1>Halo, <?php echo $username ?></h1>
                     </li>
                     <li class="py-2 px-6 border border-white rounded-lg 
                     hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
@@ -85,7 +85,8 @@ $statusLogin = true;
 
         <!-- Form pengaduan -->
         <section class="bg-white m-auto w-3/6 p-[30px] shadow-form">
-            <h1 class="text-center w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">Ajukan Pengaduan Anda
+            <h1 class="text-center w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">
+                Ajukan Pengaduan Anda
             </h1>
             <form action="#" method="post">
                 <!-- deskripsi pengajuan -->
