@@ -1,3 +1,7 @@
+<?php 
+$username = "admin";
+$statusLogin = true;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +24,8 @@
 
 </head>
 
-<body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/background.jpg');">
+<body class="bg-cover bg-no-repeat w-full" style="background-image: 
+    <?php echo $username == "admin" ? "url('assets/image/bgAdmin.jpg')" : "url('assets/image/background.jpg')"; ?> ">
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto">
             <!-- logo -->
@@ -31,9 +36,29 @@
             </section>
 
             <!-- navbar list -->
-            <section class=" w-[23%] box-border">
-                <ul class="flex justify-around items-center text-white font-semibold tracking-wider
+            <section class=" w-[50%] box-border">
+                <ul class="flex justify-end gap-4 items-center text-white font-semibold tracking-wider
                     text-base h-full font-[Poppins]">
+                    <!-- ketika login jadi admin -->
+                    <?php 
+                    if($username == "admin"){
+                    ?>
+                    <li class="px-4">
+                        <a href="daftarPengaduan.php">DAFTAR PENGADUAN</a>
+                    </li>
+                    <?php
+                    }
+                    ?>
+                    <!-- ------------------------- -->
+                    <?php if($statusLogin){?>
+                    <li class="px-4 border-r-2 border-white">
+                        <a href="masuk.php">Halo, <?php echo $username ?></a>
+                    </li>
+                    <li class="py-2 px-6 border border-white rounded-lg 
+                    hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
+                        <a href="logout.php">LOGOUT</a>
+                    </li>
+                    <?php }else{ ?>
                     <li class="px-4">
                         <a href="masuk.php">MASUK</a>
                     </li>
@@ -41,6 +66,7 @@
                     hover:bg-white hover:text-[#006a43] hover:ease-in-out hover:duration-500 hover:font-bold">
                         <a href="daftar.php">DAFTAR</a>
                     </li>
+                    <?php } ?>
                 </ul>
             </section>
         </section>
