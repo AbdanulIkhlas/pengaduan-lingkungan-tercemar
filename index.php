@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google fonts -->
-    <link rel="stylesheet" href="src/assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,7 +21,7 @@
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/background.jpg');">
-    <nav class=" bg-[#006a43] w-full sticky top-0">
+    <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto">
             <!-- logo -->
             <section class="w-max box-border">
