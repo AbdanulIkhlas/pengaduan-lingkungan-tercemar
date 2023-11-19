@@ -56,7 +56,7 @@
                             <select class="w-full appearance-none border border-gray-400 px-3 py-2" name="jenisKelamin"
                                 id="jenisKelamin" required>
                                 <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                                <option value="lakilaki">Laki-Laki</option>
+                                <option value="laki-laki">Laki-Laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>
                             <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
