@@ -1,6 +1,18 @@
 <?php 
-$username = "admin";
-$statusLogin = true;
+session_start();
+if (empty($_SESSION['username'])) {
+    header("location:masuk.php?pesan=belumLogin");
+}
+if (isset($_SESSION['status'])) {
+    $statusLogin = $_SESSION['status'];
+    $username = $_SESSION['username'];
+    $nama = $_SESSION['nama'];
+} else {
+    $statusLogin = false;
+    $username = "belumLogin";
+}
+include 'BE_database.php';
+include 'functionEnkripsi.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +55,7 @@ $statusLogin = true;
                         <a href="daftarEnkripsi.php">DAFTAR PENGADUAN</a>
                     </li>
                     <li class="px-4 border-r-2 border-white">
-                        <h1>Halo, <?php echo $username ?></h1>
+                        <h1>Halo, <?php echo $nama ?></h1>
                     </li>
                     <li class="py-2 px-6 border border-white rounded-lg 
                     hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
@@ -63,10 +75,23 @@ $statusLogin = true;
             </h2>
             <div class="w-48 m-auto border-2 border-white mt-9 mb-9"></div>
         </section>
-        <!-- Form masuk -->
+        <!-- Data Pengaduan -->
         <section class="bg-white m-auto w-[90%] p-[30px] shadow-form rounded-lg">
             <div class="flex justify-between items-center w-full bg-[#006a43] py-3 px-5 text-white">
-                <h1 class="font-semibold text-xl"> Status : Ter-Enkripsi </h1>
+                <div class="flex gap-2">
+                    <h1 class="font-semibold text-xl"> Status : Ter-Enkripsi </h1>
+                    <div class="border-r border-l border-white "></div>
+                    <?php 
+                    $sql = mysqli_query($konek, "SELECT COUNT(*) AS banyak_data FROM data_pengaduan") or die(mysqli_error($konek));
+                    $row = mysqli_fetch_assoc($sql);
+                    if (!$row) {
+                        $banyakData = 0;
+                    }else{
+                        $banyakData = $row['banyak_data'];
+                    }
+                    ?>
+                    <h1 class="font-semibold text-xl"> Total Pengaduan : <?php echo $banyakData ?> </h1>
+                </div>
                 <a href="daftarDeskripsi.php">
                     <button class="py-2 px-4 border border-white rounded-lg font-bold shadow-md shadow-black active:shadow-sm
                     active:translate-y-[2px] active:ease-in-out active:duration-100
@@ -75,8 +100,12 @@ $statusLogin = true;
                     </button>
                 </a>
             </div>
-
-            <table class="border-collapse border border-slate-500 w-full mt-5">
+            <table class="border-collapse table-fixed border border-slate-500 w-full mt-5">
+                <?php 
+                $query = mysqli_query($konek, "SELECT u.nama, u.no_telp, d.deskripsi_pengaduan, d.tanggal_pengaduan, 
+                        d.maps, d.detail_lokasi, d.gambar FROM users u INNER JOIN data_pengaduan d ON u.id = d.id_user") 
+                        or die(mysqli_error($konek));
+                ?>
                 <thead class="h-4">
                     <tr class="h-4 text-center bg-[#006a43] font-semibold text-white">
                         <th class="border border-black w-[17%] h-11">Nama</th>
@@ -87,57 +116,44 @@ $statusLogin = true;
                         <th class="border border-black w-[22%] h-11">Gambar</th>
                     </tr>
                 </thead>
+                <?php 
+                while ($data = mysqli_fetch_array($query)) {
+                    $aesKey = "AESKey1234567890";
+                    $pathGambar = "assets/image/pengajuan/HasilDeskripsi/DeskripsiGambar_" . basename($data['gambar']);
+                    deskripsiFileWithAES($data['gambar'], $pathGambar, $aesKey);
+                ?>
                 <tbody class="p-4">
                     <tr class="p-4">
-                        <td class="border border-slate-700 text-center p-2 box-border">Muhammad Abdanul Ikhlas</td>
-                        <td class="border border-slate-700 text-center p-2 box-border">082271583369</td>
-                        <td class="border border-slate-700 text-center p-2 box-border">
-                            Sorry banget nih, tapi sampah di sekitar rumah saya sudah
-                            sangat membludak, tolong segera di eksekusi
+                        <td class="border border-slate-700 text-center p-2 box-border w-[17%]">
+                            <?php echo $data['nama'] ?></td>
+                        <td class="border border-slate-700 text-center p-2 box-border w-[13%]">
+                            <?php echo $data['no_telp'] ?>
                         </td>
-                        <td class="border border-slate-700 p-2 box-border">
+                        <td class="border border-slate-700 text-center p-2 box-border w-[21%] break-words">
+                            <div class="w-full">
+                                <?php echo $data['deskripsi_pengaduan'] ?>
+                            </div>
+                        </td>
+                        <td class="border border-slate-700 p-2 box-border w-[14%]">
                             <div class="flex justify-center">
                                 <a class="inline-block py-2 px-4 m-auto border border-white rounded-lg font-bold bg-[#027c4f] text-white
                                     hover:bg-[#004c30]  hover:ease-in-out hover:duration-500 hover:translate-y-[-1px]"
-                                    href="gmaps.com">
+                                    href="<?php echo $data['maps'] ?>">
                                     Lihat Lokasi
                                 </a>
                             </div>
                         </td>
-                        <td class="border border-slate-700 text-center p-2 box-border">Pas dekat toko yang warna hijau
-                        </td>
-                        <td class="border border-slate-700 m-auto p-2 box-border">
+                        <td class="border border-slate-700 text-center p-2 box-border w-[13%]">
+                            <?php echo $data['detail_lokasi'] ?></td>
+                        <td class="border border-slate-700 m-auto p-2 box-border w-[22%]">
                             <div class="flex justify-center">
-                                <img class="w-[320px] h-[220px] border border-black rounded-md"
-                                    src="assets/image/sampah1.png" alt="Sampah">
+                                <img class="w-[320px] h-[220px] border border-black rounded-md blur-md"
+                                    src="<?php echo $pathGambar ?>" alt="Sampah">
                             </div>
                         </td>
                     </tr>
-                    <tr class="p-4">
-                        <td class="border border-slate-700 text-center p-2 box-border">Tegar Wibisana</td>
-                        <td class="border border-slate-700 text-center p-2 box-border">082277364471</td>
-                        <td class="border border-slate-700 text-center p-2 box-border">
-                            Sampah semakin meraja lela, tolonggg eksekusi secepatnya sirrr
-                        </td>
-                        <td class="border border-slate-700 p-2 box-border">
-                            <div class="flex justify-center">
-                                <a class="inline-block py-2 px-4 m-auto border border-white rounded-lg font-bold bg-[#027c4f] text-white
-                                hover:bg-[#004c30]  hover:ease-in-out hover:duration-500 hover:translate-y-[-1px]"
-                                    href="gmaps.com">
-                                    Lihat Lokasi
-                                </a>
-                            </div>
-                        </td>
-                        <td class="border border-slate-700 text-center p-2 box-border">Samping mirota</td>
-                        <td class="border border-slate-700 m-auto p-2 box-border">
-                            <div class="flex justify-center">
-                                <img class="w-[320px] h-[220px] border border-black rounded-md"
-                                    src="assets/image/sampah2.png" alt="Sampah">
-                            </div>
-                        </td>
-                    </tr>
-
                 </tbody>
+                <?php } ?>
             </table>
 
 

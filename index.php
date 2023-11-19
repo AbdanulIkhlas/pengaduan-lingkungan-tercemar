@@ -95,7 +95,7 @@ if (isset($_SESSION['status'])) {
             <h1 class="text-center w-full p-4 bg-[#006a43] text-white font-semibold text-2xl mb-4">
                 Ajukan Pengaduan Anda
             </h1>
-            <form action="#" method="post">
+            <form action="BE_pengajuan.php" method="post" enctype="multipart/form-data">
                 <!-- deskripsi pengajuan -->
                 <textarea class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" name="deskripsi" cols="30"
                     rows="10" placeholder="Ketik Laporan Anda *" required></textarea>
