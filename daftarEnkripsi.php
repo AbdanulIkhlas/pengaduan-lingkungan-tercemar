@@ -35,10 +35,13 @@ $statusLogin = true;
             </section>
 
             <!-- navbar list -->
-            <section class=" w-[50%] box-border">
+            <section class=" w-[80%] box-border">
                 <ul class="flex justify-end gap-4 items-center text-white font-semibold tracking-wider
                     text-base h-full font-[Poppins]">
                     <!-- ketika login jadi admin -->
+                    <li class="px-4">
+                        <a href="daftarEnkripsi.php">DAFTAR PENGADUAN</a>
+                    </li>
                     <li class="px-4 border-r-2 border-white">
                         <h1>Halo, <?php echo $username ?></h1>
                     </li>

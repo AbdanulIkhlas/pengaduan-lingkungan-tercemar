@@ -35,10 +35,13 @@ $statusLogin = true;
             </section>
 
             <!-- navbar list -->
-            <section class=" w-[50%] box-border">
+            <section class=" w-[80%] box-border">
                 <ul class="flex justify-end gap-4 items-center text-white font-semibold tracking-wider
                     text-base h-full font-[Poppins]">
                     <!-- ketika login jadi admin -->
+                    <li class="px-4">
+                        <a href="daftarEnkripsi.php">DAFTAR PENGADUAN</a>
+                    </li>
                     <li class="px-4 border-r-2 border-white">
                         <h1>Halo, <?php echo $username ?></h1>
                     </li>
@@ -64,7 +67,7 @@ $statusLogin = true;
         <section class="bg-white m-auto w-[90%] p-[30px] shadow-form rounded-lg">
             <div class="flex justify-between items-center w-full bg-[#006a43] py-3 px-5 text-white">
                 <h1 class="font-semibold text-xl"> Status : Ter-Deskripsi </h1>
-                <a href="daftarEnrkipsi.php">
+                <a href="daftarEnkripsi.php">
                     <button class="py-2 px-4 border border-white rounded-lg font-bold shadow-md shadow-black active:shadow-sm
                     active:translate-y-[2px] active:ease-in-out active:duration-100
                     hover:bg-[#035336] hover:text-white hover:ease-in-out hover:duration-500 hover:translate-y-[-1px]">
