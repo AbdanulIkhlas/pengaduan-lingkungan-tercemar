@@ -1,6 +1,13 @@
 <?php 
-$username = "admin";
-$statusLogin = false;
+session_start();
+if (isset($_SESSION['status'])) {
+    $statusLogin = $_SESSION['status'];
+    $username = $_SESSION['username'];
+    $nama = $_SESSION['nama'];
+} else {
+    $statusLogin = false;
+    $username = "belumLogin";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +59,7 @@ $statusLogin = false;
                     <!-- ------------------------- -->
                     <?php if($statusLogin){?>
                     <li class="px-4 border-r-2 border-white">
-                        <h1>Halo, <?php echo $username ?></h1>
+                        <h1>Halo, <?php echo $nama ?></h1>
                     </li>
                     <li class="py-2 px-6 border border-white rounded-lg 
                     hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
@@ -112,11 +119,20 @@ $statusLogin = false;
                     <input class="w-[32rem]" type="file" name="gambar" accept="image/*" required>
                 </section>
                 <div class="border border-t-gray-400 w-full mb-4"></div>
+
+                <?php if($statusLogin){ ?>
                 <section class="w-full flex justify-end">
                     <button class="p-2 px-4 bg-[#006a43] text-white font-semibold rounded-md 
-                    hover:bg-[#104632] hover:ease-in-out duration-300  hover:shadow-md hover:shadow-[#12382a]"
+                        hover:bg-[#104632] hover:ease-in-out duration-300  hover:shadow-md hover:shadow-[#12382a]"
                         type="submit">AJUKAN!</button>
                 </section>
+                <?php }else{ ?>
+                <section class="w-full flex justify-end">
+                    <a href="masuk.php?pesan=belumLogin" class="p-2 px-4 bg-[#006a43] text-white font-semibold rounded-md 
+                    hover:bg-[#104632] hover:ease-in-out duration-300  hover:shadow-md hover:shadow-[#12382a]"
+                        type="submit">AJUKAN!</a>
+                </section>
+                <?php } ?>
             </form>
         </section>
     </article>
