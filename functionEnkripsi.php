@@ -82,6 +82,18 @@ function enkripsiFileWithAES($inputFile, $outputFile, $key)
 	file_put_contents($outputFile, $iv . $encryptedData);
 }
 
+// Fungsi untuk melakukan enkripsi menggunakan Base64
+function enkripsiBase64($filename) {
+    $enkripsiNamafile = base64_encode($filename);
+    return $enkripsiNamafile;
+}
+
+// Fungsi untuk melakukan dekripsi menggunakan Base64
+function deskripsiBase64($filename) {
+    $deskripsiNamafile = base64_decode($filename);
+    return $deskripsiNamafile;
+}
+
 
 
 ?>
