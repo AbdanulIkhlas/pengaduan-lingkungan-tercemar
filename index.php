@@ -34,7 +34,7 @@ if (isset($_SESSION['status'])) {
 <body class="bg-cover bg-no-repeat w-full" style="background-image: 
     <?php echo $username == "admin" ? "url('assets/image/bgAdmin.jpg')" : "url('assets/image/background.jpg')"; ?> ">
     <nav class=" bg-[#006a43] w-full shadow-bottom">
-        <section class="flex justify-between w-[70%] m-auto">
+        <section class="flex justify-between w-[70%] m-auto ">
             <!-- logo -->
             <section class="w-max box-border">
                 <a href="index.php">
@@ -43,7 +43,7 @@ if (isset($_SESSION['status'])) {
             </section>
 
             <!-- navbar list -->
-            <section class=" w-[50%] box-border">
+            <section class=" w-[80%] box-border ">
                 <ul class="flex justify-end gap-4 items-center text-white font-semibold tracking-wider
                     text-base h-full font-[Poppins]">
                     <!-- ketika login jadi admin -->
