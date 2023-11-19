@@ -41,9 +41,24 @@
                 <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="text" name="username"
                     required>
                 <!-- input password -->
-                <label class="tracking-wider" for="password">Password</label>
-                <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="password" name="password"
-                    required>
+                <div class="relative mb-4">
+                    <label class="block tracking-wider mb-1" for="Password">
+                        Password
+                    </label>
+                    <div class="flex items-center border border-gray-400 px-[12px] py-[10px]">
+                        <input class="w-full border-none focus:outline-none" type="password" name="password"
+                            id="PasswordInput" required>
+                        <div class="absolute right-2 flex items-center cursor-pointer w-max h-max"
+                            id="TogglePasswordVisibility">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                <path
+                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
                 <button class="w-full p-2 px-4 mt-2 bg-[#006a43] text-white font-semibold rounded-[5px] hover:bg-[#104632] 
                 hover:ease-in-out duration-300  hover:shadow-md hover:shadow-[#12382a] hover:-translate-y-1"
                     type="submit">MASUK</button>
@@ -71,4 +86,28 @@
     </article>
 
     <footer></footer>
+    <script>
+        const passwordInput = document.getElementById('PasswordInput');
+        const togglePasswordVisibility = document.getElementById('TogglePasswordVisibility');
+
+        const eyeIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+        </svg>
+    `;
+
+        const eyeSlashIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+            <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+            <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+        </svg>
+    `;
+
+        togglePasswordVisibility.addEventListener('click', () => {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            togglePasswordVisibility.innerHTML = type === 'password' ? eyeIcon : eyeSlashIcon;
+        });
+    </script>
 </body>

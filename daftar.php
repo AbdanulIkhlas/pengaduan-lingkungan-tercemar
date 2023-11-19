@@ -111,8 +111,8 @@
                         <label class="block tracking-wider mb-1" for="Password">
                             Password <span class="text-red-600">*</span>
                         </label>
-                        <div class="flex items-center border border-gray-400 px-3 py-2 rounded-md">
-                            <input class="w-full border-none focus:outline-none" type="password" name="Password"
+                        <div class="flex items-center border border-gray-400 px-3 py-2">
+                            <input class="w-full border-none focus:outline-none" type="password" name="password"
                                 id="PasswordInput" placeholder="Minimal 6 Karakter" minlength="6" required>
                             <div class="absolute right-2 flex items-center cursor-pointer w-max h-max"
                                 id="TogglePasswordVisibility">
@@ -130,7 +130,7 @@
                         <label class="block tracking-wider mb-1" for="confirmPassword">
                             Konfirmasi Password <span class="text-red-600">*</span>
                         </label>
-                        <div class="flex items-center border border-gray-400 px-3 py-2 rounded-md">
+                        <div class="flex items-center border border-gray-400 px-3 py-2">
                             <input class="w-full border-none focus:outline-none" type="password" name="confirmPassword"
                                 id="ConfirmPasswordInput" placeholder="Minimal 6 Karakter" minlength="6" required>
                             <div class="absolute right-2 flex items-center cursor-pointer w-max h-max"
