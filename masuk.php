@@ -35,7 +35,7 @@
             tracking-wide">
                 Masuk
             </h1>
-            <form action="#" method="post">
+            <form action="BE_login.php" method="post">
                 <!-- input username-->
                 <label class="tracking-wider" for="username">Username</label>
                 <input class="w-full border border-gray-400 mb-4 px-[12px] py-[10px]" type="text" name="username"
