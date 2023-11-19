@@ -14,8 +14,11 @@ if ($password != $konfirmasiPassword) {
     return header("location:daftar.php?pesan=PasswordBeda");
 }
 
+// // Enkripsi password menggunakan password_hash
+// $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 // Enkripsi password menggunakan password_hash
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = hash('sha256', $password);
 
 $query = mysqli_query($konek, "INSERT INTO users VALUES
     ('','$username','$hashedPassword','$nama','$jenisKelamin','$noHP','$tanggalLahir','$email')

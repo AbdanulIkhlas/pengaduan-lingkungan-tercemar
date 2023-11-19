@@ -9,7 +9,7 @@ $query = mysqli_query($konek, "SELECT * FROM users WHERE username = BINARY '$use
 $cek = mysqli_num_rows($query);
 $user = mysqli_fetch_assoc($query);
 
-if ($cek > 0 && password_verify($password, $user['password'])) {
+if ($cek > 0 && hash('sha256', $password) == $user['password']) {
     // Login berhasil
     $_SESSION['username'] = $user['username'];
     $_SESSION['nama'] = $user['nama'];
