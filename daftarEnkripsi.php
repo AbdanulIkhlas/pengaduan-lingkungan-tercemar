@@ -44,7 +44,7 @@ $statusLogin = true;
                     </li>
                     <li class="py-2 px-6 border border-white rounded-lg 
                     hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
-                        <a href="logout.php">LOGOUT</a>
+                        <a href="BE_logout.php">LOGOUT</a>
                     </li>
                 </ul>
             </section>

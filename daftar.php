@@ -39,7 +39,7 @@
             tracking-wide">
                 Daftar
             </h1>
-            <form action="#" method="post">
+            <form action="BE_daftar.php" method="post">
                 <section class=" mb-4 flex justify-between w-full">
                     <!-- nama -->
                     <div class=" w-[48%]">
@@ -75,8 +75,8 @@
                         <label class="block tracking-wider mb-1" for="noHP">
                             No. Telp Aktif <span class="text-red-600">*</span>
                         </label>
-                        <input class="w-full border border-gray-400 px-3 py-2 appearance-none" type="number" name="noHP"
-                            id="noHP" placeholder="Minimal 8-10 Angka" min="10" max="14" required>
+                        <input class="w-full border border-gray-400 px-3 py-2 appearance-none" type="text" name="noHP"
+                            id="noHP" placeholder="Masukkan No Aktif" required>
                     </div>
                     <!-- tanggal lahir -->
                     <div class=" w-[48%]">
@@ -108,7 +108,7 @@
                 <section class="mb-4 flex justify-between w-full">
                     <!-- Password -->
                     <div class="relative w-[48%]">
-                        <label class="block tracking-wider mb-1" for="Password">
+                        <label class="block tracking-wider mb-1" for="PasswordInput">
                             Password <span class="text-red-600">*</span>
                         </label>
                         <div class="flex items-center border border-gray-400 px-3 py-2">
@@ -127,12 +127,13 @@
                     </div>
                     <!-- Konfirmasi Password -->
                     <div class="w-[48%] relative">
-                        <label class="block tracking-wider mb-1" for="confirmPassword">
+                        <label class="block tracking-wider mb-1" for="ConfirmPasswordInput">
                             Konfirmasi Password <span class="text-red-600">*</span>
                         </label>
                         <div class="flex items-center border border-gray-400 px-3 py-2">
-                            <input class="w-full border-none focus:outline-none" type="password" name="confirmPassword"
-                                id="ConfirmPasswordInput" placeholder="Minimal 6 Karakter" minlength="6" required>
+                            <input class="w-full border-none focus:outline-none" type="password"
+                                name="konfirmasiPassword" id="ConfirmPasswordInput" placeholder="Minimal 6 Karakter"
+                                minlength="6" required>
                             <div class="absolute right-2 flex items-center cursor-pointer w-max h-max"
                                 id="ToggleConfirmPasswordVisibility">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

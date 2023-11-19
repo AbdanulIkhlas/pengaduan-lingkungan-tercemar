@@ -32,7 +32,7 @@ if (isset($_SESSION['status'])) {
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: 
-    <?php echo $username == "admin" ? "url('assets/image/bgAdmin.jpg')" : "url('assets/image/background.jpg')"; ?> ">
+    <?php echo $username == "admin09" ? "url('assets/image/bgAdmin.jpg')" : "url('assets/image/background.jpg')"; ?> ">
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto ">
             <!-- logo -->
@@ -48,7 +48,7 @@ if (isset($_SESSION['status'])) {
                     text-base h-full font-[Poppins]">
                     <!-- ketika login jadi admin -->
                     <?php 
-                    if($username == "admin"){
+                    if($username == "admin09"){
                     ?>
                     <li class="px-4">
                         <a href="daftarEnkripsi.php">DAFTAR PENGADUAN</a>
@@ -63,7 +63,7 @@ if (isset($_SESSION['status'])) {
                     </li>
                     <li class="py-2 px-6 border border-white rounded-lg 
                     hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
-                        <a href="logout.php">LOGOUT</a>
+                        <a href="BE_logout.php">LOGOUT</a>
                     </li>
                     <?php }else{ ?>
                     <li class="px-4">
