@@ -119,8 +119,9 @@ include 'functionEnkripsi.php';
                 <?php 
                 while ($data = mysqli_fetch_array($query)) {
                     $aesKey = "AESKey1234567890";
-                    $pathGambar = "assets/image/pengajuan/HasilDeskripsi/DeskripsiGambar_" . basename($data['gambar']);
-                    deskripsiFileWithAES($data['gambar'], $pathGambar, $aesKey);
+                    $deskripsiPathGambar = deskripsiBase64($data['gambar']);
+                    $pathGambar = "assets/image/pengajuan/HasilDeskripsi/DeskripsiGambar_" . basename($deskripsiPathGambar);
+                    deskripsiFileWithAES($deskripsiPathGambar, $pathGambar, $aesKey);
                 ?>
                 <tbody class="p-4">
                     <tr class="p-4">

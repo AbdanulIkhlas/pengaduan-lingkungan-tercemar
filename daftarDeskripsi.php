@@ -119,8 +119,9 @@ include 'functionEnkripsi.php';
                 <?php 
                 while ($data = mysqli_fetch_array($query)) {
                     $aesKey = "AESKey1234567890";
-                    $hasilEnkripsiGambar = "assets/image/pengajuan/HasilDeskripsi/DeskripsiGambar_" . basename($data['gambar']);
-                    deskripsiFileWithAES($data['gambar'], $hasilEnkripsiGambar, $aesKey);
+                    $deskripsiPathGambar = deskripsiBase64($data['gambar']);
+                    $hasilDeskripsiGambar = "assets/image/pengajuan/HasilDeskripsi/DeskripsiGambar_" . basename($deskripsiPathGambar);
+                    deskripsiFileWithAES($deskripsiPathGambar, $hasilDeskripsiGambar, $aesKey);
                     $deskripsiXOR = xorCipher($data['deskripsi_pengaduan'],9);
                     $hasilDeskripsi = caesarCipher($deskripsiXOR, 9, 'deskripsi');
                 ?>
@@ -145,7 +146,7 @@ include 'functionEnkripsi.php';
                         <td class="border border-slate-700 m-auto p-2 box-border">
                             <div class="flex justify-center">
                                 <img class="w-[320px] h-[220px] border border-black rounded-md"
-                                    src="<?php echo $hasilEnkripsiGambar ?>" alt="Sampah">
+                                    src="<?php echo $hasilDeskripsiGambar ?>" alt="Sampah">
                             </div>
                         </td>
                     </tr>

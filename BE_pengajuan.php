@@ -46,7 +46,8 @@ function upload()
     }
     
     clearstatcache();
-    return $hasilEnkripsiGambar;
+    $pathGambar = enkripsiBase64($hasilEnkripsiGambar);
+    return $pathGambar;
 }
 
 $deskripsi = $_POST['deskripsi'];
