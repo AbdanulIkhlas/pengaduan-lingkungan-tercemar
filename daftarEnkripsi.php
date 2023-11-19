@@ -104,8 +104,10 @@ $statusLogin = true;
                         <td class="border border-slate-700 text-center p-2 box-border">Pas dekat toko yang warna hijau
                         </td>
                         <td class="border border-slate-700 m-auto p-2 box-border">
-                            <img class="w-[320px] h-[220px] border border-black rounded-md"
-                                src="assets/image/sampah1.png" alt="Sampah">
+                            <div class="flex justify-center">
+                                <img class="w-[320px] h-[220px] border border-black rounded-md"
+                                    src="assets/image/sampah1.png" alt="Sampah">
+                            </div>
                         </td>
                     </tr>
                     <tr class="p-4">
@@ -125,8 +127,10 @@ $statusLogin = true;
                         </td>
                         <td class="border border-slate-700 text-center p-2 box-border">Samping mirota</td>
                         <td class="border border-slate-700 m-auto p-2 box-border">
-                            <img class="w-[320px] h-[220px] border border-black rounded-md"
-                                src="assets/image/sampah2.png" alt="Sampah">
+                            <div class="flex justify-center">
+                                <img class="w-[320px] h-[220px] border border-black rounded-md"
+                                    src="assets/image/sampah2.png" alt="Sampah">
+                            </div>
                         </td>
                     </tr>
 
