@@ -1,22 +1,26 @@
 <?php
 session_start();
 include 'BE_database.php';
-// $konek = new mysqli('localhost', 'root', '', 'lindungi_bumi');
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-
-$query = mysqli_query($konek, "select * from users where
-    username = BINARY'$username' and password=BINARY'$password'") or die(mysqli_error($konek));
+$query = mysqli_query($konek, "SELECT * FROM users WHERE username = BINARY '$username'") or die(mysqli_error($konek));
 $cek = mysqli_num_rows($query);
-$data = mysqli_fetch_array($query);
+$user = mysqli_fetch_assoc($query);
 
-if ($cek > 0) {
-    $_SESSION['username'] = $username;
-    $_SESSION['nama'] = $data['nama'];
+if ($cek > 0 && password_verify($password, $user['password'])) {
+    // Login berhasil
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['nama'] = $user['nama'];
     $_SESSION['status'] = true;
-    header("location:index.php");
+    if($_SESSION['username'] == "admin09"){
+        header("location:daftarEnkripsi.php?pesan=berhasilLoginBSebagaiAdmin");
+    }else{
+        header("location:index.php?pesan=loginBerhasil");
+    }
 } else {
-    header("location:masuk.php?pesan=gagal");
+    // Login gagal
+    header("location:masuk.php?pesan=loginGagal");
 }
+?>
