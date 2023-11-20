@@ -163,7 +163,7 @@ if (isset($_SESSION['status'])) {
                 </section>
                 <?php }else{ ?>
                 <section class="w-full flex justify-end">
-                    <a href="masuk.php?pesan=belumLogin" class="p-2 px-4 bg-[#006a43] text-white font-semibold rounded-md 
+                    <a href="masuk.php?pesanGagal=belumLogin" class="p-2 px-4 bg-[#006a43] text-white font-semibold rounded-md 
                     hover:bg-[#104632] hover:ease-in-out duration-300  hover:shadow-md hover:shadow-[#12382a]"
                         type="submit">AJUKAN!</a>
                 </section>
