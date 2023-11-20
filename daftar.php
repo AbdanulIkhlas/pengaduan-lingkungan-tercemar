@@ -1,8 +1,4 @@
 <?php 
-session_start();
-if (empty($_SESSION['username'])) {
-    header("location:masuk.php?pesan=belumLogin");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
