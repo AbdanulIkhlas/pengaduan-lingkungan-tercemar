@@ -30,7 +30,7 @@ $query = mysqli_query($konek, "INSERT INTO users VALUES
     ") or die(mysqli_error($konek));
 
 if ($query) {
-    header("location:masuk.php?pesan=daftarBerhasil");
+    header("location:masuk.php?pesanBerhasil=daftarBerhasil");
 } else {
-    header("location:daftar.php?pesan=daftarGagal");
+    header("location:daftar.php?pesanGagal=daftarGagal");
 }

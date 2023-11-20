@@ -24,8 +24,9 @@ include 'functionEnkripsi.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lindungi Bumi</title>
 
-    <!-- Tailwind -->
+    <!-- style -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +38,38 @@ include 'functionEnkripsi.php';
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/bgAdmin.jpg');">
+    <?php if (isset($_GET['pesanBerhasil'])) { ?>
+    <?php if ($_GET['pesanBerhasil'] == "hapusBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Berhasil Menghapus Pengaduan
+    </div>
+    <?php } else if ($_GET['pesanBerhasil'] == "tindakLanjutBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Tindak Lanjut Berhasil Diteruskan
+    </div>
+    <?php } ?>
+    <?php } ?>
+
+    <?php if (isset($_GET['pesanGagal'])) { ?>
+    <?php if ($_GET['pesanGagal'] == "hapusGagal") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Gagal Menghapus Pengaduan
+    </div>
+    <?php } else if ($_GET['pesanGagal'] == "tindakLanjutGagal") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Tindak Lanjut Gagal Diteruskan
+    </div>
+    <?php } if ($_GET['pesanGagal'] == "tindakLanjutGagalUpdate") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Gagal Update
+    </div>
+    <?php } ?>
+    <?php } ?>
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto">
             <!-- logo -->

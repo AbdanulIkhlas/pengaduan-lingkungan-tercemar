@@ -23,14 +23,10 @@ include 'functionEnkripsi.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lindungi Bumi</title>
-    <style>
-        .shadow-pemberitahuan {
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-        }
-    </style>
 
-    <!-- Tailwind -->
+    <!-- style -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +38,33 @@ include 'functionEnkripsi.php';
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/bgAdmin.jpg');">
+    <?php if (isset($_GET['pesanBerhasil'])) { ?>
+    <?php if ($_GET['pesanBerhasil'] == "telahDibaca") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Pemberitahuan Telah Dibaca
+    </div>
+    <?php } else if ($_GET['pesanBerhasil'] == "loginBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Login Berhasil
+    </div>
+    <?php } else if ($_GET['pesanBerhasil'] == "logout") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Logout Berhasil
+    </div>
+    <?php } ?>
+    <?php } ?>
+
+    <?php if (isset($_GET['pesanGagal'])) { ?>
+    <?php if ($_GET['pesanGagal'] == "gagalMembaca") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Pemberitahuan Gagal Dibaca
+    </div>
+    <?php } ?>
+    <?php } ?>
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto">
             <!-- logo -->

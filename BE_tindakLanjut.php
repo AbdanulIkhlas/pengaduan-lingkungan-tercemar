@@ -28,10 +28,10 @@ if ($query) {
     $queryUpdate = mysqli_query($konek, "UPDATE data_pengaduan SET tindak_lanjut = '1' WHERE id_pengaduan = $id_pengaduan")
     or die(mysqli_error($konek));
     if($queryUpdate){
-        header("location:".$hal."?pesan=tindakLanjutBerhasil");
+        header("location:".$hal."?pesanBerhasil=tindakLanjutBerhasil");
     }else{
-        header("location:".$hal."?pesan=tindakLanjutGagalUpdate");
+        header("location:".$hal."?pesanGagal=tindakLanjutGagalUpdate");
     }
 } else {
-    header("location:".$hal."?pesan=tindakLanjutGagal");
+    header("location:".$hal."?pesanGagal=tindakLanjutGagal");
 }

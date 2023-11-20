@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if (empty($_SESSION['username'])) {
-    header("location:masuk.php?pesan=belumLogin");
+    header("location:masuk.php?pesanGagal=belumLogin");
 }
 
 include "BE_database.php";
@@ -14,8 +14,8 @@ if($halaman == 1){
 }
 $query = mysqli_query($konek, "DELETE FROM data_pengaduan where id_pengaduan=$id");
 if ($query) {
-    header("location:".$hal."?pesan=hapusBerhasil");
+    header("location:".$hal."?pesanBerhasil=hapusBerhasil");
 } else {
-    header("location:".$hal."?pesan=hapusGagal");
+    header("location:".$hal."?pesanGagal=hapusGagal");
 }
 ?>

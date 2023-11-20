@@ -18,11 +18,11 @@ if (isset($_SESSION['status'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lindungi Bumi</title>
 
-    <!-- Tailwind -->
+    <!-- style -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
 
     <!-- Google fonts -->
-    <link rel="stylesheet" href="assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -34,21 +34,31 @@ if (isset($_SESSION['status'])) {
 <body class="bg-cover bg-no-repeat w-full" style="background-image: 
     <?php echo $username == "admin09" ? "url('assets/image/bgAdmin.jpg')" : "url('assets/image/background.jpg')"; ?> ">
     <?php if (isset($_GET['pesanBerhasil'])) { ?>
+    <?php if ($_GET['pesanBerhasil'] == "pengaduanBerhasil") { ?>
     <div
-        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 left-[40%]">
-        <?php if (isset($_GET['pesanBerhasil']) == "pengaduanBerhasil") { ?>
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
         Berhasil Mengajukan Pengaduan
-        <?php } ?>
     </div>
+    <?php } else if ($_GET['pesanBerhasil'] == "loginBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Login Berhasil
+    </div>
+    <?php } else if ($_GET['pesanBerhasil'] == "logout") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Logout Berhasil
+    </div>
+    <?php } ?>
     <?php } ?>
 
     <?php if (isset($_GET['pesanGagal'])) { ?>
+    <?php if ($_GET['pesanGagal'] == "pengaduanGagal") { ?>
     <div
-        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 left-[40%]">
-        <?php if (isset($_GET['pesanGagal']) == "pengaduanGagal") { ?>
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
         Gagal Mengajukan Pengaduan
-        <?php } ?>
     </div>
+    <?php } ?>
     <?php } ?>
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto ">

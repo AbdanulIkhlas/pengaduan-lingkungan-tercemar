@@ -25,8 +25,9 @@ include 'functionEnkripsi.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lindungi Bumi</title>
 
-    <!-- Tailwind -->
+    <!-- style -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +39,38 @@ include 'functionEnkripsi.php';
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/bgAdmin.jpg');">
+    <?php if (isset($_GET['pesanBerhasil'])) { ?>
+    <?php if ($_GET['pesanBerhasil'] == "hapusBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Berhasil Menghapus Pengaduan
+    </div>
+    <?php } else if ($_GET['pesanBerhasil'] == "tindakLanjutBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Tindak Lanjut Berhasil Diteruskan
+    </div>
+    <?php } ?>
+    <?php } ?>
+
+    <?php if (isset($_GET['pesanGagal'])) { ?>
+    <?php if ($_GET['pesanGagal'] == "hapusGagal") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Gagal Menghapus Pengaduan
+    </div>
+    <?php } else if ($_GET['pesanGagal'] == "tindakLanjutGagal") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Tindak Lanjut Gagal Diteruskan
+    </div>
+    <?php } if ($_GET['pesanGagal'] == "tindakLanjutGagalUpdate") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Gagal Update
+    </div>
+    <?php } ?>
+    <?php } ?>
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto">
             <!-- logo -->
@@ -165,7 +198,7 @@ include 'functionEnkripsi.php';
                                     <!-- tindak lanjut -->
                                     <div>
                                         <div class="buttonTindakLanjut cursor-pointer"
-                                            data-idpengaduan="<?php echo $data['id_pengaduan']; ?>" data-halaman="1"
+                                            data-idpengaduan="<?php echo $data['id_pengaduan']; ?>" data-halaman="2"
                                             data-iduser="<?php echo $data['id']; ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green"
                                                 class="bi bi-check-square-fill" viewBox="0 0 16 16">
@@ -230,7 +263,7 @@ include 'functionEnkripsi.php';
                                     <!-- hapus -->
                                     <div>
                                         <div class="buttonHapus cursor-pointer"
-                                            data-idpengaduan="<?php echo $data['id_pengaduan']; ?>" data-halaman="1">
+                                            data-idpengaduan="<?php echo $data['id_pengaduan']; ?>" data-halaman="2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red"
                                                 class="bi bi-slash-square-fill" viewBox="0 0 16 16">
                                                 <path

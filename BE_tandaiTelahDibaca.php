@@ -13,7 +13,7 @@ $query = mysqli_query($konek, "UPDATE notifikasi SET telah_dibaca = '1' WHERE id
 
 
 if ($query) {
-    header("location:pemberitahuan.php?pesan=telahDibaca");
+    header("location:pemberitahuan.php?pesanBerhasil=telahDibaca");
 } else {
-    header("location:pemberitahuan.php?pesan=gagalMembaca");
+    header("location:pemberitahuan.php?pesanGagal=gagalMembaca");
 }

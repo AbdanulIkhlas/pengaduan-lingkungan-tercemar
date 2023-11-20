@@ -2,4 +2,4 @@
 
 session_start();
 session_destroy();
-header("location:index.php?pesan=logout");
+header("location:index.php?pesanBerhasil=logout");

@@ -18,12 +18,12 @@ if ($cek > 0 && hash('sha256', $password) == $user['password']) {
     $_SESSION['nama'] = $user['nama'];
     $_SESSION['status'] = true;
     if($_SESSION['username'] == "admin09"){
-        header("location:daftarEnkripsi.php?pesan=berhasilLoginBSebagaiAdmin");
+        header("location:daftarEnkripsi.php?pesanBerhasil=berhasilLoginSebagaiAdmin");
     }else{
-        header("location:index.php?pesan=loginBerhasil");
+        header("location:index.php?pesanBerhasil=loginBerhasil");
     }
 } else {
     // Login gagal
-    header("location:masuk.php?pesan=loginGagal");
+    header("location:masuk.php?pesanGagal=loginGagal");
 }
 ?>

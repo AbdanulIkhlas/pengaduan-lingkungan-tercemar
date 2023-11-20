@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lindungi Bumi</title>
 
-    <!-- Tailwind -->
+    <!-- style -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +21,28 @@
 </head>
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: url('assets/image/background.jpg');">
+    <?php if (isset($_GET['pesanBerhasil'])) { ?>
+    <?php if ($_GET['pesanBerhasil'] == "daftarBerhasil") { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 right-5">
+        Berhasil Mendaftar
+    </div>
+    <?php } ?>
+    <?php } ?>
+
+    <?php if (isset($_GET['pesanGagal'])) { ?>
+    <?php if ($_GET['pesanGagal'] == "belumLogin") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Belum Login
+    </div>
+    <?php } else if ($_GET['pesanGagal'] == "loginGagal") { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 right-5">
+        Login Gagal
+    </div>
+    <?php } ?>
+    <?php } ?>
     <nav class="w-full flex justify-center">
         <!-- logo -->
         <section class="w-max box-border">
