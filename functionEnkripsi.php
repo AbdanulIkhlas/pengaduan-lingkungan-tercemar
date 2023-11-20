@@ -38,17 +38,9 @@ function caesarCipher($text, $key, $action) {
 //  Algoritma XOR
 function xorCipher($text, $key) {
     $result = '';
-    $resultb = '';
     for ($i = 0; $i < strlen($text); $i++) {
         $char = $text[$i];
         $keyChar = $key;
-        
-        // // Memilih jenis kunci berdasarkan pilihan pengguna
-        // if ($_POST["key-type"] === "ascii-char") {
-        //     $keyChar = $key;
-        // } elseif ($_POST["key-type"] === "ascii-decimal") {
-        //     $keyChar = chr($key);
-        // }
 
         // RUMUS C = P XOR K ; P = C XOR K
         $resultChar = chr(ord($char) ^ ord($keyChar));
