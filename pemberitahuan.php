@@ -85,10 +85,12 @@ include 'functionEnkripsi.php';
                     <li class="px-4 border-r-2 border-white">
                         <h1>Halo, <?php echo $nama ?></h1>
                     </li>
-                    <li class="py-2 px-6 border border-white rounded-lg 
-                    hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
-                        <a href="BE_logout.php">LOGOUT</a>
-                    </li>
+                    <a href="BE_logout.php">
+                        <li class="py-2 px-6 border border-white rounded-lg 
+                        hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
+                            LOGOUT
+                        </li>
+                    </a>
                 </ul>
             </section>
         </section>

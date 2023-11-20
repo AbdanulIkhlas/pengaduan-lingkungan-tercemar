@@ -92,18 +92,22 @@ if (isset($_SESSION['status'])) {
                     <li class="px-4 border-r-2 border-white">
                         <h1>Halo, <?php echo $nama ?></h1>
                     </li>
-                    <li class="py-2 px-6 border border-white rounded-lg 
-                    hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
-                        <a href="BE_logout.php">LOGOUT</a>
-                    </li>
+                    <a href="BE_logout.php">
+                        <li class="py-2 px-6 border border-white rounded-lg 
+                        hover:bg-red-600 hover:text-white hover:ease-in-out hover:duration-500 hover:font-bold">
+                            LOGOUT
+                        </li>
+                    </a>
                     <?php }else{ ?>
                     <li class="px-4">
                         <a href="masuk.php">MASUK</a>
                     </li>
-                    <li class="py-2 px-6 border border-white rounded-lg 
+                    <a href="daftar.php">
+                        <li class="py-2 px-6 border border-white rounded-lg 
                     hover:bg-white hover:text-[#006a43] hover:ease-in-out hover:duration-500 hover:font-bold">
-                        <a href="daftar.php">DAFTAR</a>
-                    </li>
+                            DAFTAR
+                        </li>
+                    </a>
                     <?php } ?>
                 </ul>
             </section>
