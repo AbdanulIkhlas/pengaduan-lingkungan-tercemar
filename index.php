@@ -46,6 +46,8 @@ if (isset($_SESSION['status'])) {
             <section class=" w-[80%] box-border ">
                 <ul class="flex justify-end gap-4 items-center text-white font-semibold tracking-wider
                     text-base h-full font-[Poppins]">
+                    <!-- ------------------------- -->
+                    <?php if($statusLogin){?>
                     <!-- ketika login jadi admin -->
                     <?php 
                     if($username == "admin09"){
@@ -54,10 +56,12 @@ if (isset($_SESSION['status'])) {
                         <a href="daftarEnkripsi.php">DAFTAR PENGADUAN</a>
                     </li>
                     <?php
-                    }
+                    }else{
                     ?>
-                    <!-- ------------------------- -->
-                    <?php if($statusLogin){?>
+                    <li class="px-4">
+                        <div class="cursor-pointer">NOTIFIKASI</div>
+                    </li>
+                    <?php } ?>
                     <li class="px-4 border-r-2 border-white">
                         <h1>Halo, <?php echo $nama ?></h1>
                     </li>
