@@ -3,6 +3,7 @@ session_start();
 if (empty($_SESSION['username'])) {
     header("location:masuk.php?pesan=belumLogin");
 }
+
 if (isset($_SESSION['status'])) {
     $statusLogin = $_SESSION['status'];
     $username = $_SESSION['username'];

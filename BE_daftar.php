@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (empty($_SESSION['username'])) {
+    header("location:masuk.php?pesan=belumLogin");
+}
+
 include "BE_database.php";
 $nama = $_POST['nama'];
 $jenisKelamin = $_POST['jenisKelamin'];
