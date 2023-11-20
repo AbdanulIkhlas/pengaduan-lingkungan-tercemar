@@ -73,7 +73,7 @@ $query = mysqli_query($konek, "INSERT INTO data_pengaduan VALUES
     or die(mysqli_error($konek));
 
 if ($query) {
-    header("location:index.php?pesan=pengajuanBerhasil");
+    header("location:index.php?pesanBerhasil=pengaduanBerhasil");
 } else {
-    header("location:index.php?pesan=pengajuanGagal");
+    header("location:index.php?pesanGagal=pengaduanGagal");
 }

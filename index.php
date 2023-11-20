@@ -33,6 +33,23 @@ if (isset($_SESSION['status'])) {
 
 <body class="bg-cover bg-no-repeat w-full" style="background-image: 
     <?php echo $username == "admin09" ? "url('assets/image/bgAdmin.jpg')" : "url('assets/image/background.jpg')"; ?> ">
+    <?php if (isset($_GET['pesanBerhasil'])) { ?>
+    <div
+        class="notification bg-green-700 border border-white rounded-md font-bold p-5 text-white absolute top-10 left-[40%]">
+        <?php if (isset($_GET['pesanBerhasil']) == "pengaduanBerhasil") { ?>
+        Berhasil Mengajukan Pengaduan
+        <?php } ?>
+    </div>
+    <?php } ?>
+
+    <?php if (isset($_GET['pesanGagal'])) { ?>
+    <div
+        class="notification bg-red-700 border border-white rounded-md p-5 font-bold text-white absolute top-10 left-[40%]">
+        <?php if (isset($_GET['pesanGagal']) == "pengaduanGagal") { ?>
+        Gagal Mengajukan Pengaduan
+        <?php } ?>
+    </div>
+    <?php } ?>
     <nav class=" bg-[#006a43] w-full shadow-bottom">
         <section class="flex justify-between w-[70%] m-auto ">
             <!-- logo -->
@@ -59,7 +76,7 @@ if (isset($_SESSION['status'])) {
                     }else{
                     ?>
                     <li class="px-4">
-                        <div class="cursor-pointer">NOTIFIKASI</div>
+                        <a href="pemberitahuan.php">PEMBERITAHUAN</a>
                     </li>
                     <?php } ?>
                     <li class="px-4 border-r-2 border-white">
