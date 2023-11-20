@@ -108,13 +108,13 @@ include 'functionEnkripsi.php';
                 ?>
                 <thead class="h-4">
                     <tr class="h-4 text-center bg-[#006a43] font-semibold text-white">
-                        <th class="border border-black w-[16%] h-11">Nama</th>
+                        <th class="border border-black w-[15%] h-11">Nama</th>
                         <th class="border border-black w-[11%] h-11">No Telp</th>
                         <th class="border border-black w-[21%] h-11">Deskripsi Pengaduan</th>
                         <th class="border border-black w-[12%] h-11">Lokasi Map</th>
                         <th class="border border-black w-[13%] h-11">Detail Lokasi</th>
-                        <th class="border border-black w-[20%] h-11">Gambar</th>
-                        <th class="border border-black w-[8%] h-11">Tindak Lanjut</th>
+                        <th class="border border-black w-[19%] h-11">Gambar</th>
+                        <th class="border border-black w-[10%] h-11">Tindak Lanjut</th>
                     </tr>
                 </thead>
                 <?php 
@@ -138,8 +138,8 @@ include 'functionEnkripsi.php';
                         </td>
                         <td class="border border-slate-700 p-2 box-border w-[14%]">
                             <div class="flex justify-center">
-                                <a class="inline-block py-2 px-4 m-auto border border-white rounded-lg font-bold bg-[#027c4f] text-white
-                                    hover:bg-[#004c30]  hover:ease-in-out hover:duration-500 hover:translate-y-[-1px]"
+                                <a class="inline-block py-2 px-4 m-auto rounded-lg font-bold bg-[#027c4f] text-white    
+                                hover:bg-[#104632] hover:ease-in-out duration-300 hover:shadow-md hover:shadow-[#12382a]  hover:translate-y-[-1px]"
                                     href="<?php echo $data['maps'] ?>">
                                     Lihat Lokasi
                                 </a>
@@ -159,7 +159,8 @@ include 'functionEnkripsi.php';
                                 <div class="flex  gap-5">
 
                                     <!-- tindak lanjut -->
-                                    <a href="BE_tindakLanjut.php?idPengaduan=<?php echo $data['id_pengaduan'] ?>">
+                                    <a
+                                        href="BE_tindakLanjut.php?idPengaduan=<?php echo $data['id_pengaduan'] ?>&halaman=1">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green"
                                                 class="bi bi-check-square-fill" viewBox="0 0 16 16">
@@ -169,7 +170,8 @@ include 'functionEnkripsi.php';
                                         </div>
                                     </a>
                                     <!-- hapus -->
-                                    <a href="BE_hapusPengaduan.php?idPengaduan=<?php echo $data['id_pengaduan'] ?>">
+                                    <a
+                                        href="BE_hapusPengaduan.php?idPengaduan=<?php echo $data['id_pengaduan'] ?>&halaman=1">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red"
                                                 class="bi bi-slash-square-fill" viewBox="0 0 16 16">

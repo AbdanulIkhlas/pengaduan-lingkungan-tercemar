@@ -4,14 +4,18 @@ if (empty($_SESSION['username'])) {
     header("location:masuk.php?pesan=belumLogin");
 }
 
-include "database.php";
+include "BE_database.php";
 $id = $_GET['idPengaduan'];
 $halaman = $_GET['halaman'];
-$halaman == 1 ? "daftarEnkripsi.php" : "daftarDeskripsi.php";
-$query = mysqli_query($konek, "DELETE FROM data_pengaduan where id=$id");
+if($halaman == 1){
+    $hal = "daftarEnkripsi.php";
+}else{
+    $hal = "daftarDeskripsi.php";
+}
+$query = mysqli_query($konek, "DELETE FROM data_pengaduan where id_pengaduan=$id");
 if ($query) {
-    header("location:".$halaman."?pesan=hapusBerhasil");
+    header("location:".$hal."?pesan=hapusBerhasil");
 } else {
-    header("location:".$halaman."?pesan=hapusGagal");
+    header("location:".$hal."?pesan=hapusGagal");
 }
 ?>
