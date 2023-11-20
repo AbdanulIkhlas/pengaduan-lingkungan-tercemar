@@ -102,18 +102,19 @@ include 'functionEnkripsi.php';
             </div>
             <table class="border-collapse border border-slate-500 w-full mt-5">
                 <?php 
-                $query = mysqli_query($konek, "SELECT u.nama, u.no_telp, d.deskripsi_pengaduan, d.tanggal_pengaduan, 
-                        d.maps, d.detail_lokasi, d.gambar FROM users u INNER JOIN data_pengaduan d ON u.id = d.id_user") 
-                        or die(mysqli_error($konek));
+                $query =  mysqli_query($konek, "SELECT u.nama, u.no_telp,d.id_pengaduan, d.deskripsi_pengaduan, d.tanggal_pengaduan, 
+                d.maps, d.detail_lokasi, d.gambar,d.tindak_lanjut FROM users u INNER JOIN data_pengaduan d ON u.id = d.id_user") 
+                or die(mysqli_error($konek));
                 ?>
                 <thead class="h-4">
                     <tr class="h-4 text-center bg-[#006a43] font-semibold text-white">
-                        <th class="border border-black w-[17%] h-11">Nama</th>
-                        <th class="border border-black w-[13%] h-11">No Telp</th>
+                        <th class="border border-black w-[16%] h-11">Nama</th>
+                        <th class="border border-black w-[11%] h-11">No Telp</th>
                         <th class="border border-black w-[21%] h-11">Deskripsi Pengaduan</th>
-                        <th class="border border-black w-[14%] h-11">Lokasi Map</th>
+                        <th class="border border-black w-[12%] h-11">Lokasi Map</th>
                         <th class="border border-black w-[13%] h-11">Detail Lokasi</th>
-                        <th class="border border-black w-[22%] h-11">Gambar</th>
+                        <th class="border border-black w-[20%] h-11">Gambar</th>
+                        <th class="border border-black w-[8%] h-11">Tindak Lanjut</th>
                     </tr>
                 </thead>
                 <?php 
@@ -145,8 +146,49 @@ include 'functionEnkripsi.php';
                             <?php echo $data['detail_lokasi'] ?></td>
                         <td class="border border-slate-700 m-auto p-2 box-border">
                             <div class="flex justify-center">
-                                <img class="w-[320px] h-[220px] border border-black rounded-md"
+                                <img class="w-[280px] h-[180px] border border-black rounded-md"
                                     src="<?php echo $hasilDeskripsiGambar ?>" alt="Sampah">
+                            </div>
+                        </td>
+                        <td class="border border-slate-700 m-auto box-border w-[22%]">
+                            <div class="flex flex-col items-center gap-6 ">
+                                <!-- container action -->
+                                <div class="flex  gap-5">
+
+                                    <!-- tindak lanjut -->
+                                    <a href="BE_tindakLanjut.php?idPengaduan=<?php echo $data['id_pengaduan'] ?>">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green"
+                                                class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <!-- hapus -->
+                                    <a href="BE_hapusPengaduan.php?idPengaduan=<?php echo $data['id_pengaduan'] ?>">
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red"
+                                                class="bi bi-slash-square-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.354 5.354-6 6a.5.5 0 0 1-.708-.708l6-6a.5.5 0 0 1 .708.708z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="border border-t-black w-full"></div>
+                                <!-- STATUS -->
+                                <?php if($data['tindak_lanjut']==0){?>
+                                <div
+                                    class="bg-[#027c4f] text-white font-semibold  w-[90%] p-1 py-2 text-center text-sm rounded-md">
+                                    <p>Belum Di Tindak Lanjuti</p>
+                                </div>
+                                <?php }else{ ?>
+                                <div
+                                    class="bg-[#027c4f] text-white font-semibold  w-[90%] p-1 py-2 text-center text-sm rounded-md">
+                                    <p>Sudah Di Tindak Lanjuti</p>
+                                </div>
+                                <?php } ?>
                             </div>
                         </td>
                     </tr>
