@@ -56,6 +56,7 @@ $map = $_POST['map'];
 $lokasi = $_POST['lokasi'];
 $gambar = upload();
 $username = $_SESSION['username'];
+$tindakLanjut = 0;
 
 // enkripsi deskripsi pengajuan
 $resultCaesar = caesarCipher($deskripsi, 9, 'enkripsi');
@@ -68,7 +69,7 @@ $id_user = $user['id'];
 
 // Memasukkan ke database
 $query = mysqli_query($konek, "INSERT INTO data_pengaduan VALUES
-    ( '', '$id_user','$hasilEnkripsiPengajuan', '$tanggal', '$map','$lokasi', '$gambar')")
+    ( '', '$id_user','$hasilEnkripsiPengajuan', '$tanggal', '$map','$lokasi', '$gambar','$tindakLanjut')")
     or die(mysqli_error($konek));
 
 if ($query) {
