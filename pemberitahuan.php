@@ -127,7 +127,7 @@ include 'functionEnkripsi.php';
             ?>
 
             <div class="flex justify-between items-center w-full bg-[<?php echo $background ?>] p-2 text-white border border-white 
-                rounded-md shadow-pemberitahuan hover:bg-[#d6e4e0]">
+                rounded-md shadow-pemberitahuan hover:bg-[#d6e4e0] mb-5">
                 <!-- container -->
                 <div class="flex h-full w-full box-border gap-1">
                     <!-- icon -->
@@ -176,10 +176,9 @@ include 'functionEnkripsi.php';
                             <?php } ?>
                         </div>
                     </div>
-                    <?php } ?>
                 </div>
-
             </div>
+            <?php } ?>
 
 
         </section>
